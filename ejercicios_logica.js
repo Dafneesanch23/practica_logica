@@ -30,11 +30,11 @@ function numMayor(numeros) {
     return mayor;
   }
   
-  const numUser = [];
+  let numUser = [];
   
   for (let i = 0; i < 10; i++) {
-    const datos = prompt(`Ingrese el número ${i + 1}:`);
-    const numero = parseFloat(datos);
+    let datos = prompt(`Ingrese el número ${i + 1}:`);
+    let numero = parseFloat(datos);
   
     if (isNaN(numero)) {
       console.log(`"${datos}" no es un número válido. Ingrese un número.`);
@@ -47,7 +47,7 @@ function numMayor(numeros) {
   if (numUser.length === 0) {
     console.log('No se ingresaron números válidos.');
   } else {
-    const mayorNum = numMayor(numUser);
+    let mayorNum = numMayor(numUser);
     console.log(`El número mayor es: ${mayorNum}`);
   }
 
@@ -62,7 +62,24 @@ function numMayor(numeros) {
 // 5. Factorial
 // Write a program that prompts for an intenger number n. Where  1 <= n. Solve this using recursion.
 
+function numEntero() {
+  let numList = prompt('Ingrese un número entero diferente de 0:');
+  let numero = parseInt(numList);
+
+  if (isNaN(numero) || numero < 1) {
+    console.log('Ingrese un número entero diferente de 0.');
+    return numEntero(); 
+  } else {
+    return numero;
+  }
+}
+
+let numIngre = numEntero();
+
+console.log(`Su número es: ${numIngre}`);
+
 // 6. Flat array
 // Write a program that takes the following nested matrix and flattens it (makes it a 1D array). Use any type of algorithm you want like callbacks, recursion, etc...
 
 // let multiDimension = [1, [2, 3, [4, 5, [6]]]];
+
